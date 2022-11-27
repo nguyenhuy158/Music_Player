@@ -29,7 +29,7 @@ public class MyApplication extends Application {
 			// Config channel 1
 			CharSequence name        = getString(R.string.channel_name);
 			String       description = getString(R.string.channel_description);
-			int          importance  = NotificationManager.IMPORTANCE_DEFAULT;
+			int          importance  = NotificationManager.IMPORTANCE_HIGH;
 			NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
 			                                                      name,
 			                                                      importance);
