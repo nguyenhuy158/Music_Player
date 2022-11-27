@@ -3,7 +3,6 @@ package com.example.musicplayer;
 import android.app.Notification;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -26,9 +25,7 @@ public class MainActivity extends AppCompatActivity
 		setContentView(R.layout.activity_main);
 		
 		Button button  = findViewById(R.id.button);
-		Button button1 = findViewById(R.id.button1);
 		button.setOnClickListener(this);
-		button1.setOnClickListener(this);
 	}
 	
 	@Override
@@ -36,16 +33,12 @@ public class MainActivity extends AppCompatActivity
 		if (view.getId() == R.id.button) {
 			sendNotification(MyApplication.CHANNEL_ID);
 		}
-		if (view.getId() == R.id.button1) {
-			sendNotification(MyApplication.CHANNEL_ID_2);
-		}
 	}
 	
 	private void sendNotification(String channelId) {
 		Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
 		                                             R.drawable.big_image);
-		Uri uri
-				= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+		
 		
 		Notification notification = new NotificationCompat.Builder(this,
 		                                                           channelId)
@@ -57,7 +50,6 @@ public class MainActivity extends AppCompatActivity
 				.setStyle(new NotificationCompat.BigPictureStyle()
 						          .bigPicture(bitmap)
 						          .bigLargeIcon(bitmap))
-				.setSound(uri)
 				.build();
 		
 		NotificationManagerCompat notificationManager
