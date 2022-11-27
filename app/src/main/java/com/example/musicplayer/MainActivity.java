@@ -3,6 +3,8 @@ package com.example.musicplayer;
 import android.app.Notification;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,6 +44,9 @@ public class MainActivity extends AppCompatActivity
 	private void sendNotification(String channelId) {
 		Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
 		                                             R.drawable.big_image);
+		Uri uri
+				= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+		
 		Notification notification = new NotificationCompat.Builder(this,
 		                                                           channelId)
 				.setContentTitle("Title push notification")
@@ -49,7 +54,10 @@ public class MainActivity extends AppCompatActivity
 				.setStyle(new NotificationCompat.BigTextStyle().bigText("Content here"))
 				.setSmallIcon(R.drawable.ic_notification_custom)
 				.setLargeIcon(bitmap)
-				.setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bitmap).bigLargeIcon(bitmap))
+				.setStyle(new NotificationCompat.BigPictureStyle()
+						          .bigPicture(bitmap)
+						          .bigLargeIcon(bitmap))
+				.setSound(uri)
 				.build();
 		
 		NotificationManagerCompat notificationManager
