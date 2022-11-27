@@ -3,8 +3,6 @@ package com.example.musicplayer;
 import static android.content.ContentValues.TAG;
 
 import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -14,6 +12,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import java.util.Date;
 
@@ -35,8 +34,6 @@ public class MainActivity extends AppCompatActivity
 	public void onClick(View view) {
 		if (view.getId() == R.id.button) {
 			sendNotification();
-			Log.d(TAG,
-			      "onClick: ok");
 		}
 	}
 	
@@ -51,13 +48,11 @@ public class MainActivity extends AppCompatActivity
 				.setLargeIcon(bitmap)
 				.build();
 		
-		NotificationManager notificationManager
-				= (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+		NotificationManagerCompat notificationManager
+				= NotificationManagerCompat.from(this);
 		
 		notificationManager.notify(getNotificationId(),
 		                           notification);
-		Log.d(TAG,
-		      "sendNotification: notify");
 	}
 	
 	private int getNotificationId() {
