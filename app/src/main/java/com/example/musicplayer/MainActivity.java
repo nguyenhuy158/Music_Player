@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity
 				.setStyle(new NotificationCompat.BigTextStyle().bigText("Content here"))
 				.setSmallIcon(R.drawable.ic_notification_custom)
 				.setLargeIcon(bitmap)
+				.setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bitmap).bigLargeIcon(bitmap))
 				.build();
 		
 		NotificationManagerCompat notificationManager
