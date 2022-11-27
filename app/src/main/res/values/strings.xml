@@ -4,4 +4,6 @@
     <string name="channel_description" >Chanel description</string >
     <string name="channel_name_2" >Channel Name 2</string >
     <string name="channel_description_2" >Chanel description 2</string >
+    <string name="notification_title" >Title</string >
+    <string name="notification_info" >Description</string >
 </resources >

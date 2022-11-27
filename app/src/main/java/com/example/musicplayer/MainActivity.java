@@ -1,12 +1,15 @@
 package com.example.musicplayer;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.Notification;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RemoteViews;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
@@ -24,14 +27,14 @@ public class MainActivity extends AppCompatActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Button button  = findViewById(R.id.button);
+		Button button = findViewById(R.id.button);
 		button.setOnClickListener(this);
 	}
 	
 	@Override
 	public void onClick(View view) {
 		if (view.getId() == R.id.button) {
-			sendNotification(MyApplication.CHANNEL_ID);
+			sendCustomNotification(MyApplication.CHANNEL_ID);
 		}
 	}
 	
@@ -50,6 +53,26 @@ public class MainActivity extends AppCompatActivity
 				.setStyle(new NotificationCompat.BigPictureStyle()
 						          .bigPicture(bitmap)
 						          .bigLargeIcon(bitmap))
+				.build();
+		
+		NotificationManagerCompat notificationManager
+				= NotificationManagerCompat.from(this);
+		
+		notificationManager.notify(getNotificationId(),
+		                           notification);
+	}
+	
+	private void sendCustomNotification(String channelId) {
+		RemoteViews notificationLayout = new RemoteViews(getPackageName(),
+		                                                 R.layout.custom_notification);
+		notificationLayout.setTextViewText(R.id.notification_title,
+		                                   "New " + "Title here");
+		
+		Notification notification = new NotificationCompat.Builder(this,
+		                                                           channelId)
+				.setStyle(new NotificationCompat.BigTextStyle().bigText("Content here"))
+				.setSmallIcon(R.drawable.ic_notification_custom)
+				.setCustomContentView(notificationLayout)
 				.build();
 		
 		NotificationManagerCompat notificationManager
