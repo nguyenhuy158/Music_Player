@@ -1,12 +1,9 @@
 package com.example.musicplayer;
 
-import static android.content.ContentValues.TAG;
-
 import android.app.Notification;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -26,22 +23,27 @@ public class MainActivity extends AppCompatActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Button button = findViewById(R.id.button);
+		Button button  = findViewById(R.id.button);
+		Button button1 = findViewById(R.id.button1);
 		button.setOnClickListener(this);
+		button1.setOnClickListener(this);
 	}
 	
 	@Override
 	public void onClick(View view) {
 		if (view.getId() == R.id.button) {
-			sendNotification();
+			sendNotification(MyApplication.CHANNEL_ID);
+		}
+		if (view.getId() == R.id.button1) {
+			sendNotification(MyApplication.CHANNEL_ID_2);
 		}
 	}
 	
-	private void sendNotification() {
+	private void sendNotification(String channelId) {
 		Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
 		                                             R.drawable.ic_launcher_background);
 		Notification notification = new NotificationCompat.Builder(this,
-		                                                           MyApplication.CHANNEL_ID)
+		                                                           channelId)
 				.setContentTitle("Title push notification")
 				.setContentText("Content here")
 				.setSmallIcon(R.drawable.ic_notification_custom)
