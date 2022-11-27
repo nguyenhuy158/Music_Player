@@ -41,11 +41,12 @@ public class MainActivity extends AppCompatActivity
 	
 	private void sendNotification(String channelId) {
 		Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
-		                                             R.drawable.ic_launcher_background);
+		                                             R.drawable.big_image);
 		Notification notification = new NotificationCompat.Builder(this,
 		                                                           channelId)
 				.setContentTitle("Title push notification")
 				.setContentText("Content here")
+				.setStyle(new NotificationCompat.BigTextStyle().bigText("Content here"))
 				.setSmallIcon(R.drawable.ic_notification_custom)
 				.setLargeIcon(bitmap)
 				.build();
