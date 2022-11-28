@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity
 		
 		Button button = findViewById(R.id.button);
 		button.setOnClickListener(this);
+		
+		
+		Button buttonPlay = findViewById(R.id.buttonPlay);
+		buttonPlay.setOnClickListener(this);
 	}
 	
 	@Override
@@ -35,6 +39,26 @@ public class MainActivity extends AppCompatActivity
 		if (view.getId() == R.id.button) {
 			sendCustomNotification(MyApplication.CHANNEL_ID);
 		}
+		if (view.getId() == R.id.buttonPlay) {
+			playMusic();
+		}
+	}
+	
+	private void playMusic() {
+		
+		Song song = new Song("taivianhyeunguoikhac",
+		                     "hanacamtien",
+		                     R.drawable.big_image,
+		                     R.raw.taivianhyeunguoikhac_hanacamtien);
+		Intent intent = new Intent(this,
+		                           MyService.class);
+		
+		Bundle bundle = new Bundle();
+		bundle.putSerializable("song",
+		                       song);
+		intent.putExtra("bundle",
+		                bundle);
+		startService(intent);
 	}
 	
 	private void sendNotification(String channelId) {

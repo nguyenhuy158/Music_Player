@@ -36,6 +36,8 @@ public class MyApplication extends Application {
 			channel.setDescription(description);
 			channel.setSound(sound,
 			                 audioAttributes);
+			channel.setSound(null,
+			                 null);
 			
 			// Config channel 2
 			CharSequence name_2        = getString(R.string.channel_name_2);
