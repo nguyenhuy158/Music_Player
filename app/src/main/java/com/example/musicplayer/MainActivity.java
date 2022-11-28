@@ -1,12 +1,11 @@
 package com.example.musicplayer;
 
-import static android.content.ContentValues.TAG;
-
 import android.app.Notification;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RemoteViews;
@@ -64,15 +63,31 @@ public class MainActivity extends AppCompatActivity
 	
 	private void sendCustomNotification(String channelId) {
 		RemoteViews notificationLayout = new RemoteViews(getPackageName(),
-		                                                 R.layout.custom_notification);
-		notificationLayout.setTextViewText(R.id.notification_title,
-		                                   "New " + "Title here");
+		                                                 R.layout.custom_notification_collapsed);
+		notificationLayout.setTextViewText(R.id.textViewSongName,
+		                                   "TaiViAnhYeuNguoiKhac");
+		notificationLayout.setTextViewText(R.id.textViewAuthor,
+		                                   "HanaCamTien");
+		
+		// click notification open intent
+		Intent notifyIntent = new Intent(this,
+		                                 MainActivity.class);
+		// Set the Activity to start in a new, empty task
+		notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+		// Create the PendingIntent
+		PendingIntent notifyPendingIntent = PendingIntent.getActivity(this,
+		                                                              getNotificationId(),
+		                                                              notifyIntent,
+		                                                              PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+		
 		
 		Notification notification = new NotificationCompat.Builder(this,
 		                                                           channelId)
-				.setStyle(new NotificationCompat.BigTextStyle().bigText("Content here"))
 				.setSmallIcon(R.drawable.ic_notification_custom)
 				.setCustomContentView(notificationLayout)
+				.setCustomBigContentView(notificationLayout)
+				.setCustomHeadsUpContentView(notificationLayout)
+				.setContentIntent(notifyPendingIntent)
 				.build();
 		
 		NotificationManagerCompat notificationManager
