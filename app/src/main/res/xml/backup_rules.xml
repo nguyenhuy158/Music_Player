@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 11/28/22, 11:58 PM Nguyen Huy
+  ~
+  ~ backup_rules.xml [lastModified: 11/28/22, 11:24 PM]
+  ~
+  ~ Contact:
+  ~ facebook: https://www.facebook.com/nguyenhuy158/
+  ~ github: https://www.github.com/nguyenhuy158/
+  -->
+
+<!--
    Sample backup rules file; uncomment and customize as necessary.
    See https://developer.android.com/guide/topics/data/autobackup
    for details.

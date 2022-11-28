@@ -1,4 +1,14 @@
-package com.example.musicplayer;
+/*
+ * Copyright (C) 11/28/22, 11:58 PM Nguyen Huy
+ *
+ * Song.java [lastModified: 11/28/22, 11:24 PM]
+ *
+ * Contact:
+ * facebook: https://www.facebook.com/nguyenhuy158/
+ * github: https://www.github.com/nguyenhuy158/
+ */
+
+package com.example.musicplayer.song;
 
 import java.io.Serializable;
 
@@ -7,6 +17,10 @@ public class Song implements Serializable {
 	private String single;
 	private int    image;
 	private int    resource;
+	private String path;
+	
+	public Song() {
+	}
 	
 	public Song(String title,
 	            String single,
@@ -16,6 +30,14 @@ public class Song implements Serializable {
 		this.single   = single;
 		this.image    = image;
 		this.resource = resource;
+	}
+	
+	public String getPath() {
+		return path;
+	}
+	
+	public void setPath(String path) {
+		this.path = path;
 	}
 	
 	public String getTitle() {

@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 11/28/22, 11:58 PM Nguyen Huy
+  ~
+  ~ dimens.xml [lastModified: 11/28/22, 11:24 PM]
+  ~
+  ~ Contact:
+  ~ facebook: https://www.facebook.com/nguyenhuy158/
+  ~ github: https://www.github.com/nguyenhuy158/
+  -->
+
 <resources>
     <dimen name="height_custom_notification_collapsed" >48dp</dimen >
-    <dimen name="height_custom_notification_expanded" >252dp</dimen >
+    <dimen name="height_custom_notification_expanded" >150dp</dimen >
 </resources>

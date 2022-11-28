@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 11/28/22, 11:58 PM Nguyen Huy
+  ~
+  ~ colors.xml [lastModified: 11/28/22, 11:24 PM]
+  ~
+  ~ Contact:
+  ~ facebook: https://www.facebook.com/nguyenhuy158/
+  ~ github: https://www.github.com/nguyenhuy158/
+  -->
+
 <resources >
     <color name="purple_200" >#FFBB86FC</color >
     <color name="purple_500" >#FF6200EE</color >

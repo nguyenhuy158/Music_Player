@@ -1,4 +1,17 @@
+/*
+ * Copyright (C) 11/28/22, 11:58 PM Nguyen Huy
+ *
+ * MyApplication.java [lastModified: 11/28/22, 11:24 PM]
+ *
+ * Contact:
+ * facebook: https://www.facebook.com/nguyenhuy158/
+ * github: https://www.github.com/nguyenhuy158/
+ */
+
 package com.example.musicplayer;
+
+import static com.example.musicplayer.resource.Constants.CHANNEL_ID;
+import static com.example.musicplayer.resource.Constants.CHANNEL_ID_2;
 
 import android.app.Application;
 import android.app.NotificationChannel;
@@ -8,8 +21,7 @@ import android.net.Uri;
 import android.os.Build;
 
 public class MyApplication extends Application {
-	public static final String CHANNEL_ID   = "CHANEL_1508";
-	public static final String CHANNEL_ID_2 = "CHANEL_0505";
+
 	
 	@Override
 	public void onCreate() {
@@ -29,7 +41,7 @@ public class MyApplication extends Application {
 			// Config channel 1
 			CharSequence name        = getString(R.string.channel_name);
 			String       description = getString(R.string.channel_description);
-			int          importance  = NotificationManager.IMPORTANCE_HIGH;
+			int          importance  = NotificationManager.IMPORTANCE_MAX;
 			NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
 			                                                      name,
 			                                                      importance);

@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 11/28/22, 11:58 PM Nguyen Huy
+  ~
+  ~ custom_notification_collapsed.xml [lastModified: 11/28/22, 11:24 PM]
+  ~
+  ~ Contact:
+  ~ facebook: https://www.facebook.com/nguyenhuy158/
+  ~ github: https://www.github.com/nguyenhuy158/
+  -->
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,18 +18,18 @@
     >
     
     <ImageView
-        android:layout_margin="3dp"
         android:id="@+id/imageViewThumbnail"
         android:layout_width="@dimen/height_custom_notification_collapsed"
         android:layout_height="@dimen/height_custom_notification_collapsed"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="3dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/big_image"
+        android:src="@drawable/ic_track"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,7 +42,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="3dp"
         android:layout_marginEnd="3dp"
         android:layout_toStartOf="@+id/imageViewRewind"
         android:layout_toEndOf="@+id/imageViewThumbnail"
@@ -49,7 +58,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewSongName"
         android:layout_alignStart="@+id/textViewSongName"
-        android:layout_marginTop="5dp"
         android:layout_marginEnd="3dp"
         android:layout_toStartOf="@+id/imageViewRewind"
         android:layout_weight="1"
@@ -58,19 +66,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewSongName"
         />
     
-    <ImageView
-        android:id="@+id/imageViewClose"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_clear"
-        />
     
     <ImageView
         android:id="@+id/imageViewRewind"
@@ -112,13 +107,20 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="12dp"
         android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/imageViewClose"
-        app:layout_constraintTop_toTopOf="@+id/imageViewClose"
         app:srcCompat="@drawable/ic_fast_forward"
         />
-
+    
+    <ImageView
+        android:id="@+id/imageViewClose"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_clear"
+        />
 
 </RelativeLayout >

@@ -1,3 +1,13 @@
+<!--
+  ~ Copyright (C) 11/28/22, 11:58 PM Nguyen Huy
+  ~
+  ~ strings.xml [lastModified: 11/28/22, 11:24 PM]
+  ~
+  ~ Contact:
+  ~ facebook: https://www.facebook.com/nguyenhuy158/
+  ~ github: https://www.github.com/nguyenhuy158/
+  -->
+
 <resources >
     <string name="app_name" >Music Player</string >
     <string name="channel_name" >Channel Name</string >
@@ -6,4 +16,7 @@
     <string name="channel_description_2" >Chanel description 2</string >
     <string name="notification_title" >Title</string >
     <string name="notification_info" >Description</string >
+    <string name="song_name" >Em la nhat mien tay</string >
+    <string name="pause" >Pause</string >
+    <string name="play" >Play</string >
 </resources >
